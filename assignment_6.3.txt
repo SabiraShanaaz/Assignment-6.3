@@ -1,0 +1,62 @@
+Explain the working of below pig script commands with an example:
+
+
+1. LOAD: -Load command simply loads the data in the Pig.
+             If the user wants to verify the execution of pig commands Diagnostic operators are used.
+
+         -The syntax of load command consists of two parts separated by = .
+
+         -The left part defines the name of the relation where the user wants to store the data 
+             and the right part mentions how to store the data.
+       
+   Eg: relation_name = LOAD 'input file path' USING function as schema;
+
+
+2. STORE: -Store command is used to store the data in the file system after the data is loaded in the file system.
+
+          -After the execution of store command a directory is created with a specified name 
+             and the data will be stored in it.
+
+   Eg: STORE relation_name INTO 'directory_path' USING function;
+
+
+3. DUMP: -DUMP is a diagnostic operator.It is used to print the contents of the relation on the console.
+
+   Eg:DUMP relation_name;
+
+
+4. FOREACH: -FOREACH operator is used for filtering.
+
+            -It is used to generate specified data transformations oon column data.
+
+   Eg:relation_name_2 = FOREACH relation_name_1 GENERATE (data);
+            -Foreach is used with generate operator.
+
+
+5. FILTER: -Filter operator comes under the filtering technique.
+
+           -Based on a specified condition it selects the tuples from the relation.
+
+   Eg:relation_name_2 = FILTER relation_name_1 BY (condition.
+           -Filter is used along with BY.
+
+
+6. GROUP BY: -The group by operator is used to group the data.The data is grouped into one or more relation.
+
+             -The group by operator collects only the data having the same key.
+
+   Eg:group_data = GROUP relation_name BY mark;
+
+
+7. ORDER BY: -The order by operator is used to display the contents of the relation in sorted order.
+
+             -It is sorted based on one or more fields.
+
+   Eg:relation_name_2 = ORDER relation_name_1 BY (ASC|DESC);
+
+
+8. DESCRIBE: -The describe command is used to view the schema of the relation.
+
+   Eg:DESCRIBE relation_name;
+
+ 
